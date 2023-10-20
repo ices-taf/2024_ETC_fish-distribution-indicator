@@ -9,7 +9,7 @@ mkdir("report")
 
 source("report-plots-and-tables.R")
 
-rmarkdown::render("report-ETC_1.6.1.2_CLIM015-MAR011.Rmd")
+rmarkdown::render("MAR011_Changes in fish distribution_2023.Rmd", output_dir = "report")
 
 # create a readme for the zip
 cat(
@@ -18,6 +18,10 @@ cat(
 The contents of this zip file contains several csv files and images.
 There are results for both ICES divisions and MSFD european sea
 regions, indicated by a suffix on the file name.
+
+The results in this zip file are a rerun of the same procedure
+as last year, using data up to 2022.
+
 
 ",
   file = "report/README.txt"
@@ -29,7 +33,7 @@ files <-
     file.path("model", dir("model")),
     file.path("output", dir("output")),
     file.path("report", dir("report")),
-    dir(pattern = "*.docx")
+    dir("report", pattern = "*.docx")
   )
 
-zip("report/CLIM015-MAR011.zip", files, extras = "-j")
+zip("report/MAR011_rerun_2023.zip", files, extras = "-j")

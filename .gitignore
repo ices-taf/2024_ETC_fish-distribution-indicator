@@ -43,3 +43,11 @@ vignettes/*.pdf
 /bootstrap/data/
 /bootstrap/software/
 /bootstrap/library/
+
+data/
+
+model/
+
+output/
+
+report/
